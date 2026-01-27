@@ -14,7 +14,7 @@ export default defineConfig({
       lucideIcons: true,
       jinjaBootData: true,
       buildConfig: {
-        indexHtmlPath: "../$app_name/www/$app_route.html",
+        indexHtmlPath: "../$app_name/www$app_route.html",
       },
     }),
   ],
