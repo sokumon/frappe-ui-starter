@@ -114,11 +114,12 @@ export default defineConfig({
           let app_name = path.basename(path.dirname(path.resolve(process.cwd())))
           let currentSite = getCurrentSite(sites, app_name)
           if(currentSite){
-              const info = server.config.server
-              const host = currentSite
-              const port = info.port
-
-              console.log(`Open in Browser: http://${host}:${port}$app_route`)
+            const info = server.config.server;
+            const url = new URL("http://localhost");
+            url.hostname = currentSite;
+            url.port = info.port;
+            url.pathname = app_route;
+            console.log(`Open in Browser: ${url.href}`);
           }
         })
       }
