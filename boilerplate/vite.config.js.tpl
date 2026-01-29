@@ -121,7 +121,7 @@ export default defineConfig({
             url.hostname = currentSite;
             url.port = info.port;
             url.pathname = "$app_route";
-            console.log("Open in Browser:" + url.href);
+            console.log("Open in Browser: " + url.href);
           }
         })
       }
