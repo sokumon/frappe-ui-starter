@@ -1,6 +1,8 @@
 import vue from '@vitejs/plugin-vue'
 import frappeui from 'frappe-ui/vite'
 import path from 'path'
+import fs from 'fs'
+import { execFileSync } from "child_process";
 import { defineConfig } from 'vite'
 
 function getBenchPath(params) {
@@ -118,7 +120,7 @@ export default defineConfig({
             const url = new URL("http://localhost");
             url.hostname = currentSite;
             url.port = info.port;
-            url.pathname = app_route;
+            url.pathname = "$app_route";
             console.log("Open in Browser:" + url.href);
           }
         })
