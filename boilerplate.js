@@ -22,7 +22,7 @@ function replaceTemplate(file_path, data) {
     });
 }
 
-let boilerplate_folder = path.join(app_path, "boilerplate");
+let boilerplate_folder = path.join(app_path, "frontend", "boilerplate");
 
 fs.readdirSync(boilerplate_folder).forEach(file => {
     let file_path = path.join(boilerplate_folder, file);
