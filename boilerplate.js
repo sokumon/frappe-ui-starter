@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 let app_data = JSON.parse(process.argv[2]);
-let app_path = path.dirname(path.resolve(process.cwd(), ".."));
+let app_path = path.basename(path.resolve(process.cwd(), ".."));
 let target_directory_map = {
     "vite.config.js.tpl": path.join(app_path, "frontend"),
     "router.ts.tpl": path.join(app_path, "frontend", "src"),
