@@ -50,8 +50,6 @@ fs.readdirSync(boilerplate_folder).forEach(file => {
         
         let output_file = path.join(target_directory, file.replace('.tpl', ''));
         fs.writeFileSync(output_file, replaced_content);
-        console.log(`Created: ${output_file}`);
-        
     } catch (err) {
         console.error(`Error processing ${file}:`, err);
     }
