@@ -105,7 +105,7 @@ export default defineConfig({
       lucideIcons: true,
       jinjaBootData: true,
       buildConfig: {
-        indexHtmlPath: "../$app_name/www$app_route.html",
+        indexHtmlPath: "../$app_name/www$route.html",
       },
     }),
     {
@@ -120,7 +120,7 @@ export default defineConfig({
             const url = new URL("http://localhost");
             url.hostname = currentSite;
             url.port = info.port;
-            url.pathname = "$app_route";
+            url.pathname = "$route";
             console.log("Open in Browser: " + url.href);
           }
         })
