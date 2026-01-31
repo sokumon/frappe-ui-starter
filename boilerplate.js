@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 let app_data = JSON.parse(process.argv[2]);
-let app_path = path.basename(path.resolve(process.cwd(), ".."));
+let app_path = path.resolve(process.cwd(), "..");
 let target_directory_map = {
     "vite.config.js.tpl": path.join(app_path, "frontend"),
     "router.ts.tpl": path.join(app_path, "frontend", "src"),
@@ -48,7 +48,6 @@ fs.readdirSync(boilerplate_folder).forEach(file => {
             fs.mkdirSync(dir, { recursive: true });
         }
         
-        // Write the file (remove .tpl extension)
         let output_file = path.join(target_directory, file.replace('.tpl', ''));
         fs.writeFileSync(output_file, replaced_content);
         console.log(`Created: ${output_file}`);
@@ -57,3 +56,5 @@ fs.readdirSync(boilerplate_folder).forEach(file => {
         console.error(`Error processing ${file}:`, err);
     }
 });
+
+fs.rmSync(boilerplate_folder, { recursive: true, force: true });
